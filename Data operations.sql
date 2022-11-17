@@ -16,9 +16,4 @@ SELECT pets.name As 'Кличка',animals.name As 'Вид',variety.name As 'П�
             #WHERE pets.id_coloring=1 
             ;
             
-      #Создание представлений числящихся питомцах и выбывших   
-      CREATE VIEW v AS SELECT id_pet, SUM(id_oper) AS 'operations' FROM log_pets 
-      GROUP BY id_pet ;
-      CREATE VIEW pets_out AS SELECT * FROM v WHERE operations>2;
-      CREATE VIEW pets_in AS SELECT * FROM v WHERE operations<2;
-      DROP VIEW v ;
+  
