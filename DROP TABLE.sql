@@ -9,3 +9,5 @@ DROP TABLE valliers_date;
 DROP TABLE family;
 DROP TABLE log_feed;
 DROP TABLE pets;
+DROP TABLE operations;
+DROP TABLE log_pets;

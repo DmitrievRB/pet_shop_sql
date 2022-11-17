@@ -134,5 +134,20 @@ CREATE TABLE pets (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,name VARCHAR (20),
 #Создаем Питомцев
 INSERT INTO pets(name,id_animals,id_variety,id_coloring)VALUES
 ('Жужа',2,15,5),
-('Лео',1,7,1);
+('Лео',1,7,1),
+('Марс',2,15,5);
+#Создаем ти наполняем тпблицу виды операций с питомцами
+CREATE TABLE operations(id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,name VARCHAR (30));
+INSERT INTO operations(name)VALUES 
+('Прибыл'),
+('Убыл'),
+('Закупка корма'),
+('Кормление');
 #Создаем таблицу движений питомцев
+CREATE TABLE log_pets(id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,id_pet INT NOT NULL,oper_date DATETIME DEFAULT CURRENT_TIMESTAMP,id_vallier INT,id_oper INT);
+INSERT INTO log_pets(id_pet,id_vallier,id_oper)VALUES
+(1,1,1),
+(2,2,1),
+(3,1,1),
+(1,1,2),
+(2,2,2);
