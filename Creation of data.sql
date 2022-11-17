@@ -152,8 +152,10 @@ INSERT INTO log_pets(id_pet,id_vallier,id_oper)VALUES
 (1,1,2),
 (2,2,2);
 #Создание представлений числящихся питомцах и выбывших   
-CREATE VIEW v AS SELECT id_pet, SUM(id_oper) AS 'operations' FROM log_pets 
+CREATE VIEW v AS SELECT id_pet, SUM(id_oper) AS 'sumoperations',MAX(oper_date) AS 'oper_date',MAX(id) AS log_id,max(id_oper) AS operations FROM log_pets 
     GROUP BY id_pet ;
-CREATE VIEW pets_out AS SELECT * FROM v WHERE operations>2;
-CREATE VIEW pets_in AS SELECT * FROM v WHERE operations<2;
-DROP VIEW v ;
+CREATE VIEW pets_out AS SELECT * FROM v WHERE sumoperations>2;
+CREATE VIEW pets_in AS SELECT * FROM v WHERE sumoperations<2;
+
+
+  

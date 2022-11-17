@@ -11,3 +11,6 @@ DROP TABLE log_feed;
 DROP TABLE pets;
 DROP TABLE operations;
 DROP TABLE log_pets;
+DROP VIEW pets_in;
+DROP VIEW pets_out;
+DROP VIEW v ;

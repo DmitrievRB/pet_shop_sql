@@ -15,5 +15,8 @@ SELECT pets.name As 'Кличка',animals.name As 'Вид',variety.name As 'П�
                   #Фильтр по окрасу
             #WHERE pets.id_coloring=1 
             ;
-            
-  
+SELECT pets.name AS 'Кличка',pets_out.oper_date,operations.name AS 'Операция' from pets_out
+    LEFT JOIN pets ON pets_out.id_pet=pets.id
+    LEFT JOIN log_pets ON pets_out.operations=log_pets.id
+    INNER JOIN operations on pets_out.operations=operations.id ;
+    SELECT * FROM operations;
